@@ -19,6 +19,8 @@ The goal of this project is to create an application where users can search for 
 - **View Stock Information:** Create a flow that allows users to view individual stock information after searching for a stock.
 
 - **3rd Party Libraries:** Look through the recommended stock data libraries and implement them in your project.
+  
+- **ReadMe:** Include a `readme.md` file with thoughts on what next steps you'd take to get this project ready for production.
 
 ## Recommended Libraries
 

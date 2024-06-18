@@ -20,7 +20,7 @@ The goal of this project is to create an application where users can search for 
 
 - **3rd Party Libraries:** Look through the recommended stock data libraries and implement them in your project.
   
-- **ReadMe:** Include a `readme.md` file with thoughts on what next steps you'd take to get this project ready for production.
+- **ReadMe:** Include a `readme.md` file with next steps you'd take to get this project ready for production. Please feel free to also include any thoughts on what else you would've added if you did not get through all the project requirements within the allotted time. 
 
 ## Recommended Libraries
 

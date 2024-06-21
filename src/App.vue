@@ -17,8 +17,37 @@ import { RouterLink, RouterView } from 'vue-router'
     <div class="content">
       <RouterView />
     </div>
+    <div>
+      <h1>Stock Search</h1>
+      <input v-model="symbol" @keydown.enter="searchStock" placeholder="Search for stock" />
+      <button @click="searchStock(symbol)">Search</button>
+    </div>
   </div>
+
 </template>
+
+<script>
+  export default {
+    data() {
+      return {
+        info: [],
+        symbol: "",
+      };
+    },
+    mounted() {
+      this.searchStock(symbol);
+    },
+    methods: {
+      searchStock(symbol) {
+        fetch(`/api/ticker/${symbol}`)
+          .then((response) => response.json())
+          .then((data) => {
+            this.info = data;
+          });
+      },
+    },
+  };
+</script>
 
 <style scoped>
 .container {

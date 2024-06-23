@@ -1,7 +1,7 @@
-<script setup lang="ts">
+<!--<script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 </script>
-
+-->
 <template>
   <div class="container">
     <header>
@@ -20,7 +20,8 @@ import { RouterLink, RouterView } from 'vue-router'
     <div>
       <h1>Stock Search</h1>
       <input v-model="symbol" @keydown.enter="searchStock" placeholder="Search for stock" />
-      <button @click="searchStock(symbol)">Search</button>
+      <button @click="searchStock">Search</button>
+      <h2>Closing Price: {{ this.info }}</h2>
     </div>
   </div>
 
@@ -35,14 +36,16 @@ import { RouterLink, RouterView } from 'vue-router'
       };
     },
     mounted() {
-      this.searchStock(symbol);
+      this.searchStock();
     },
     methods: {
-      searchStock(symbol) {
-        fetch(`/api/ticker/${symbol}`)
+      searchStock() {
+        console.log(this.symbol);
+        fetch(`http://127.0.0.1:5000//api/ticker/${this.symbol}`)
           .then((response) => response.json())
           .then((data) => {
-            this.info = data;
+            this.info = data["previousClose"];
+            console.log(this.info);
           });
       },
     },
